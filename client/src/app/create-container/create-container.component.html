@@ -1,0 +1,38 @@
+<div class="form-container">
+  <form #inputForm="ngForm" (ngSubmit)="onSubmit()">
+    <input
+      ngModel
+      class="form-input"
+      type="text"
+      name="containerName"
+      #containerName="ngModel"
+      placeholder="Container name..."
+    />
+    <input
+      ngModel
+      class="form-input"
+      type="text"
+      name="imageName"
+      #imageName="ngModel"
+      placeholder="Image name..."
+    />
+    <input
+      ngModel
+      class="form-input"
+      type="text"
+      name="privatePort"
+      #privatePort="ngModel"
+      placeholder="Private Port"
+    />
+    <input
+      ngModel
+      class="form-input"
+      type="text"
+      name="publicPort"
+      #publicPort="ngModel"
+      placeholder="Public Port"
+    />
+
+    <button type="submit" class="btn btn-primary">Create</button>
+  </form>
+</div>

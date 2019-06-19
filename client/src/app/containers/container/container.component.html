@@ -1,6 +1,6 @@
 <div class="container-item">
   <div class="container-info">
-    <button class="btn btn-danger">&times;</button>
+    <button class="btn btn-danger" (click)="onDeleteClick()">&times;</button>
     <p><span>Name:</span> {{ container.names[0].replace('/', '') }}</p>
     <p><span>Image:</span> {{ container.image }}</p>
     <p><span>Status:</span> {{ container.status }}</p>
@@ -10,6 +10,7 @@
       class="btn"
       [ngClass]="{ 'btn-primary': container.state !== 'running' }"
       [disabled]="container.state === 'running'"
+      (click)="onStartClick()"
     >
       Start
     </button>
@@ -17,6 +18,7 @@
       class="btn"
       [ngClass]="{ 'btn-primary': container.state === 'running' }"
       [disabled]="container.state !== 'running'"
+      (click)="onStopClick()"
     >
       Stop
     </button>
