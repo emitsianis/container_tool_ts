@@ -26,7 +26,7 @@ export class ContainerComponent {
         }
       },
       error => {
-        this.alertService.newError(
+        this.alertService.setAlert(
           'Could not start container. Make sure its public port is not already in use.',
         );
       },

@@ -7,14 +7,14 @@ import { AlertService } from '../services/alert.service';
   templateUrl: './alert.component.html',
 })
 export class AlertComponent implements OnInit, OnDestroy {
-  errors: string[] = [];
+  alerts: string[] = [];
   alertSubscription: Subscription;
   constructor(private alertService: AlertService) {}
 
   ngOnInit() {
-    this.alertSubscription = this.alertService.errorsChanged.subscribe(
-      errors => {
-        this.errors = errors;
+    this.alertSubscription = this.alertService.alertsChanged.subscribe(
+      alerts => {
+        this.alerts = alerts;
       },
     );
   }

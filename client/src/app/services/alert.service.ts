@@ -5,18 +5,18 @@ import { Subject } from 'rxjs';
   providedIn: 'root',
 })
 export class AlertService {
-  errors: string[] = [];
-  errorsChanged = new Subject<string[]>();
+  alerts: string[] = [];
+  alertsChanged = new Subject<string[]>();
 
   constructor() {}
 
-  newError(message: string) {
-    this.errors.unshift(message);
-    this.errorsChanged.next(this.errors);
+  setAlert(message: string) {
+    this.alerts.unshift(message);
+    this.alertsChanged.next(this.alerts);
 
     setTimeout(() => {
-      this.errors.pop();
-      this.errorsChanged.next(this.errors);
+      this.alerts.pop();
+      this.alertsChanged.next(this.alerts);
     }, 4000);
   }
 }

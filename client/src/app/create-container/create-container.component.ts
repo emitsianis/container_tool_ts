@@ -29,7 +29,7 @@ export class CreateContainerComponent implements OnInit {
     } = this.form.form.value;
 
     if (!(containerName && imageName && privatePort && publicPort)) {
-      this.alertService.newError('Please fill in all fields.');
+      this.alertService.setAlert('Please fill in all fields.');
       return;
     }
 
@@ -37,7 +37,7 @@ export class CreateContainerComponent implements OnInit {
       !(parseInt(privatePort) > 1 && parseInt(privatePort) < 65536) ||
       !(parseInt(publicPort) > 1 && parseInt(publicPort) < 65536)
     ) {
-      this.alertService.newError('Ports must be numbers between 1 and 65536.');
+      this.alertService.setAlert('Ports must be numbers between 1 and 65536.');
       return;
     }
 
@@ -49,11 +49,11 @@ export class CreateContainerComponent implements OnInit {
       },
       error => {
         if (error.status === 404) {
-          this.alertService.newError(
+          this.alertService.setAlert(
             `Image ${imageName} is not available, try pulling it.`,
           );
         } else {
-          this.alertService.newError(
+          this.alertService.setAlert(
             'This name is already in use by another container.',
           );
         }
