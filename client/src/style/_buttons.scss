@@ -1,0 +1,40 @@
+.btn {
+  background: #bbb;
+  margin: auto auto;
+  padding: 13px 28px;
+  border-radius: 30px;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font-size: 0.85rem;
+  text-decoration: none;
+
+  &:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.39);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &-danger {
+    background: #f45642;
+  }
+
+  &-primary {
+    background: #0099ff;
+  }
+
+  &-success {
+    background: #208e29;
+  }
+
+  &-info {
+    background: #8e6e20;
+  }
+}

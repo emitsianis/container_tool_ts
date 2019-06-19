@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+@import "buttons";
+@import "navbar";
+@import "alert";
+@import "viewinfo";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", "sans-serif";
+  line-height: 1.4;
+}
+
+.container {
+  width: 75%;
+  margin: 7rem auto;
+
+  h1 {
+    font-size: 2.5rem;
+    width: 20%;
+    margin: 2rem auto;
+    color: #0099ff;
+  }
+}
+
+.container-item {
+  background: #f2f2f2;
+  width: 600px;
+  margin: 3rem auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  .btn-danger {
+    padding: 5px 10px;
+    font-weight: 700;
+  }
+
+  .container-info {
+    padding: 2rem 1rem;
+
+    p {
+      margin: 1rem 0.5rem;
+
+      span {
+        color: #0099ff;
+      }
+    }
+  }
+
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+.form-container {
+  background: #f2f2f2;
+  width: 600px;
+  margin: 4rem auto;
+  display: grid;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  label {
+    display: block;
+  }
+
+  .form-input {
+    display: block;
+    width: 70%;
+    margin: 2rem auto;
+    padding: 0.7rem;
+    border-radius: 5px;
+    border: 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.09);
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .btn {
+    margin-bottom: 2rem;
+    display: block;
+  }
+}

@@ -1,0 +1,40 @@
+<div class="container-item">
+  <div class="container-info">
+    <button class="btn btn-danger">&times;</button>
+    <p><span>Name:</span> {{ container.names[0].replace('/', '') }}</p>
+    <p><span>Image:</span> {{ container.image }}</p>
+    <p><span>Status:</span> {{ container.status }}</p>
+  </div>
+  <div class="button-container">
+    <button
+      class="btn"
+      [ngClass]="{ 'btn-primary': container.state !== 'running' }"
+      [disabled]="container.state === 'running'"
+    >
+      Start
+    </button>
+    <button
+      class="btn"
+      [ngClass]="{ 'btn-primary': container.state === 'running' }"
+      [disabled]="container.state !== 'running'"
+    >
+      Stop
+    </button>
+  </div>
+  <div class="button-container">
+    <button
+      class="btn"
+      [ngClass]="{ 'btn-primary': container.state === 'running' }"
+      [disabled]="container.state !== 'running'"
+    >
+      Stats
+    </button>
+    <button
+      class="btn"
+      [ngClass]="{ 'btn-primary': container.state === 'running' }"
+      [disabled]="container.state !== 'running'"
+    >
+      Logs
+    </button>
+  </div>
+</div>
