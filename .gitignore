@@ -1,6 +1,3 @@
-# keys
-/src/config/keys.ts
-
 # compiled output
 /dist
 /node_modules
