@@ -12,6 +12,7 @@ import { SpinnerComponent } from './spinner/spinner.component';
 import { CreateContainerComponent } from './create-container/create-container.component';
 import { AlertComponent } from './alert/alert.component';
 import { PullImageComponent } from './pull-image/pull-image.component';
+import { ShortenPipe } from './pipes/shorten.pipe';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { PullImageComponent } from './pull-image/pull-image.component';
     CreateContainerComponent,
     AlertComponent,
     PullImageComponent,
+    ShortenPipe,
   ],
   imports: [BrowserModule, FormsModule, HttpClientModule, AppRoutingModule],
   providers: [],

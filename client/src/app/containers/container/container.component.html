@@ -1,8 +1,10 @@
 <div class="container-item">
   <div class="container-info">
     <button class="btn btn-danger" (click)="onDeleteClick()">&times;</button>
-    <p><span>Name:</span> {{ container.names[0].replace('/', '') }}</p>
-    <p><span>Image:</span> {{ container.image }}</p>
+    <p>
+      <span>Name:</span> {{ container.names[0].replace('/', '') | shorten: 20 }}
+    </p>
+    <p><span>Image:</span> {{ container.image | shorten: 20 }}</p>
     <p><span>Status:</span> {{ container.status }}</p>
   </div>
   <div class="button-container">
