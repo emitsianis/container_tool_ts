@@ -11,6 +11,7 @@ import { ContainerComponent } from './containers/container/container.component';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { CreateContainerComponent } from './create-container/create-container.component';
 import { AlertComponent } from './alert/alert.component';
+import { PullImageComponent } from './pull-image/pull-image.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { AlertComponent } from './alert/alert.component';
     SpinnerComponent,
     CreateContainerComponent,
     AlertComponent,
+    PullImageComponent,
   ],
   imports: [BrowserModule, FormsModule, HttpClientModule, AppRoutingModule],
   providers: [],

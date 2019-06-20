@@ -21,8 +21,7 @@ export class DockerService {
         { fromImage: imageName, tag: 'latest' },
       );
     } catch (err) {
-      console.log(err);
-      throw new HttpException(err.message, err.statusCode);
+      throw new HttpException(err.message, handleErrorCode(err.status));
     }
   }
 
@@ -46,7 +45,7 @@ export class DockerService {
 
       return containerListArray;
     } catch (err) {
-      throw new HttpException(err.mesage, err.statusCode);
+      throw new HttpException(err.mesage, handleErrorCode(err.status));
     }
   }
 
@@ -78,7 +77,7 @@ export class DockerService {
       await docker.container.create(options);
       return { ok: true };
     } catch (err) {
-      throw new HttpException(err.message, err.statusCode);
+      throw new HttpException(err.message, handleErrorCode(err.status));
     }
   }
 

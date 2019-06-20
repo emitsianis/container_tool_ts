@@ -1,6 +1,7 @@
-import { Controller, Body, Post } from '@nestjs/common';
+import { Controller, Body, Post, HttpException } from '@nestjs/common';
 import { PullImageDto } from '../../dto/pull-image.dto';
 import { DockerService } from '../../services/docker/docker.service';
+import { handleErrorCode } from '../../helperFunctions/helper-functions';
 
 @Controller('image')
 export class ImageController {
@@ -11,8 +12,8 @@ export class ImageController {
     try {
       await this.dockerService.pullImage(pullImageDto);
       return { ok: true };
-    } catch (error) {
-      return error;
+    } catch (err) {
+      throw new HttpException(err.message, err.status);
     }
   }
 }

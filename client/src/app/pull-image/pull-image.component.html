@@ -1,0 +1,15 @@
+<app-spinner *ngIf="loading"></app-spinner>
+
+<div *ngIf="!loading" class="form-container">
+  <form #inputForm="ngForm" (ngSubmit)="onSubmit()">
+    <input
+      ngModel
+      type="text"
+      class="form-input"
+      placeholder="Image name..."
+      name="imageName"
+      #imageName="ngModel"
+    />
+    <button class="btn btn-primary">Pull</button>
+  </form>
+</div>

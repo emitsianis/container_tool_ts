@@ -7,11 +7,9 @@ import {
   Body,
   Param,
   HttpException,
-  HttpStatus,
 } from '@nestjs/common';
 import { DockerService } from '../../services/docker/docker.service';
 import { CreateContainerDto } from '../../dto/create-container.dto';
-import { handleErrorCode } from '../../helperFunctions/helper-functions';
 
 @Controller('containers')
 export class ContainersController {
@@ -23,7 +21,7 @@ export class ContainersController {
     try {
       return await this.dockerService.listContainers(all);
     } catch (err) {
-      throw new HttpException(err.message, handleErrorCode(err.status));
+      throw new HttpException(err.message, err.status);
     }
   }
 
@@ -33,7 +31,7 @@ export class ContainersController {
     try {
       return await this.dockerService.createContainer(createContainerDto);
     } catch (err) {
-      throw new HttpException(err.message, handleErrorCode(err.status));
+      throw new HttpException(err.message, err.status);
     }
   }
 
@@ -43,7 +41,7 @@ export class ContainersController {
     try {
       return await this.dockerService.startContainer(id);
     } catch (err) {
-      throw new HttpException(err.message, handleErrorCode(err.status));
+      throw new HttpException(err.message, err.status);
     }
   }
 
@@ -53,7 +51,7 @@ export class ContainersController {
     try {
       return await this.dockerService.stopContainer(id);
     } catch (err) {
-      throw new HttpException(err.message, handleErrorCode(err.status));
+      throw new HttpException(err.message, err.status);
     }
   }
 
@@ -63,7 +61,7 @@ export class ContainersController {
     try {
       return await this.dockerService.getContainerStats(id);
     } catch (err) {
-      throw new HttpException(err.message, handleErrorCode(err.status));
+      throw new HttpException(err.message, err.status);
     }
   }
 
@@ -77,7 +75,7 @@ export class ContainersController {
     try {
       return await this.dockerService.deleteContainer(id);
     } catch (err) {
-      throw new HttpException(err.message, handleErrorCode(err.status));
+      throw new HttpException(err.message, err.status);
     }
   }
 }

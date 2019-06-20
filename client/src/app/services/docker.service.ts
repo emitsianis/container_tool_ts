@@ -10,6 +10,10 @@ export class DockerService {
   containersChanged = new Subject<Container[]>();
   constructor(private http: HttpClient) {}
 
+  pullImage(formData: { imageName: string }) {
+    return this.http.post('/image', formData);
+  }
+
   createContainer(formData: {
     containerName: string;
     imageName: string;
